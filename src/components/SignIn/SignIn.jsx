@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { signInWithGithub } from "../../firebase/firebase.utils";
 
 import "./sign-in.styles.scss";
 
@@ -50,7 +51,12 @@ class SignIn extends Component {
             onHandleChange={this.handleChange}
             required
           />
-          <CustomButton type="submit">SignIn</CustomButton>
+          <div className="buttons">
+            <CustomButton type="submit">SignIn</CustomButton>
+            <CustomButton onClick={signInWithGithub} isGithubSignIn>
+              SignInWithGithub
+            </CustomButton>
+          </div>
         </form>
       </div>
     );
